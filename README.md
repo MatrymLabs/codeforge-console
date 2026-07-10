@@ -8,9 +8,15 @@ architecture (Next.js/React/TypeScript front end talking to a FastAPI/Pydantic b
 ## Why this repo exists
 
 CodeForge already serves a server-rendered dashboard. This is the **separated** counterpart:
-a standalone SPA that proves the front/back split employers ask for. The typed API contract
-CodeForge publishes (Pydantic `StatusPayload`, documented in OpenAPI) becomes a TypeScript
-interface here, so a schema change surfaces as a compile error, not a runtime surprise.
+a standalone SPA that proves the front/back split employers ask for. The typed API contracts
+CodeForge publishes (Pydantic `StatusPayload`, `BlueprintSummary`, documented in OpenAPI)
+become TypeScript interfaces here, so a schema change surfaces as a compile error, not a
+runtime surprise.
+
+Two views, navigable via the top nav:
+
+- **Board** (`/`) - the readiness cards from `GET /api/status`.
+- **Blueprints** (`/blueprints`) - the filed plans from `GET /api/blueprints`.
 
 ## Run it
 
