@@ -1,0 +1,145 @@
+:root {
+  color-scheme: dark;
+  --ok: #3fb950;
+  --watch: #d29922;
+  --fail: #f85149;
+  --info: #58a6ff;
+  --bg: #0d1117;
+  --panel: #161b22;
+  --edge: #30363d;
+  --ink: #e6edf3;
+  --muted: #8b949e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+header h1 {
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.demo-banner {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-left: 3px solid var(--watch);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 1rem;
+}
+
+article.card {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-radius: 10px;
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.headline {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.detail {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.badge {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+}
+
+.badge.ok {
+  color: var(--ok);
+}
+.badge.watch {
+  color: var(--watch);
+}
+.badge.fail {
+  color: var(--fail);
+}
+.badge.info {
+  color: var(--info);
+}
+
+dl.rows {
+  margin: 0.3rem 0 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+dl.rows dt {
+  color: var(--muted);
+}
+dl.rows dd {
+  margin: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--edge);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+a {
+  color: var(--info);
+}
+
+:focus-visible {
+  outline: 2px solid var(--info);
+  outline-offset: 2px;
+}
