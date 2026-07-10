@@ -15,3 +15,12 @@ export interface StatusPayload {
   engine: string;
   cards: StatusCard[];
 }
+
+// Mirrors CodeForge's Pydantic BlueprintSummary (GET /api/blueprints).
+export interface BlueprintSummary {
+  blueprint_id: string;
+  title: string;
+  intent: string;
+  status: string;
+  requirement_count: number;
+}

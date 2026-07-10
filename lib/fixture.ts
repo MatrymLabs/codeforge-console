@@ -1,7 +1,7 @@
 // Demo data: lets the site render (and tests run) without a live CodeForge API. It is
 // clearly labeled as demo in the UI when the live API is unreachable, so nothing overstates.
 
-import type { StatusPayload } from "./types";
+import type { BlueprintSummary, StatusPayload } from "./types";
 
 export const DEMO_STATUS: StatusPayload = {
   engine: "codeforge",
@@ -40,3 +40,13 @@ export const DEMO_STATUS: StatusPayload = {
     },
   ],
 };
+
+export const DEMO_BLUEPRINTS: BlueprintSummary[] = [
+  {
+    blueprint_id: "npc_combat",
+    title: "NPCs that fight back",
+    intent: "Turn the training dummy's one-sided combat into a real exchange.",
+    status: "draft",
+    requirement_count: 5,
+  },
+];

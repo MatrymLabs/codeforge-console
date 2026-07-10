@@ -24,6 +24,25 @@ body {
   font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
+.topnav {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--edge);
+  background: var(--panel);
+}
+
+.topnav a {
+  color: var(--info);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.topnav a:hover,
+.topnav a:focus-visible {
+  text-decoration: underline;
+}
+
 main {
   max-width: 1000px;
   margin: 0 auto;
@@ -125,6 +144,36 @@ dl.rows dd {
   margin: 0;
   text-align: right;
   font-variant-numeric: tabular-nums;
+}
+
+ul.bp-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+li.bp-item {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-radius: 10px;
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+li.bp-item h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.bp-meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin: 0;
 }
 
 footer {
