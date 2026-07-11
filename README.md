@@ -35,6 +35,23 @@ NEXT_PUBLIC_API_BASE=http://localhost:8000 npm run dev
 If the live API is unreachable, the page renders clearly-labeled **demo data** instead of
 failing - so the deployed site always shows something, and never overstates what is live.
 
+## The whole full-stack, in one command
+
+`docker compose up` brings up **both** the CodeForge API (real self-audit evidence + typed
+contracts) and this console, wired together - open http://localhost:3000 and the console is
+server-rendering live data from the API container.
+
+```bash
+git clone https://github.com/MatrymLabs/codeforge          # a sibling of this repo
+git clone https://github.com/MatrymLabs/codeforge-console
+cd codeforge-console
+docker compose up --build
+# open http://localhost:3000  (API also on http://localhost:8000/docs)
+```
+
+The `api` service builds from CodeForge's `Dockerfile.api`; the `web` service is this app's
+standalone image. It needs the `codeforge` repo checked out as a sibling directory.
+
 ## Test it
 
 ```bash
