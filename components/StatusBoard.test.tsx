@@ -29,6 +29,20 @@ describe("StatusBoard", () => {
     expect(screen.getByText("FAIL")).toBeInTheDocument();
   });
 
+  it("degrades an unknown status to a '?' badge (forward-compatible contract)", () => {
+    // lib/types.ts types status as `... | string`, so the backend may send a
+    // status the front end does not yet know. StatusCard renders `?` rather
+    // than `undefined`; this pins that fallback so it cannot be silently dropped.
+    const future: StatusPayload = {
+      engine: "codeforge",
+      cards: [
+        { key: "z", title: "Future", status: "degraded", headline: "h", detail: "d", rows: {} },
+      ],
+    };
+    render(<StatusBoard status={future} />);
+    expect(screen.getByText("?")).toBeInTheDocument();
+  });
+
   it("renders detail rows when present and omits them when empty", () => {
     render(<StatusBoard status={DEMO_STATUS} />);
     expect(screen.getByText("reuse domains")).toBeInTheDocument(); // hardware has rows
