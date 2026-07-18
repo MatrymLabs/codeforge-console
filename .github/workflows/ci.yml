@@ -28,5 +28,15 @@ jobs:
       # Dependency CVE gate (the npm-native peer of pip-audit): fail only on high/critical.
       - name: Security (npm audit)
         run: npm run security
+      # SBOM (CycloneDX) of the dependency tree. Reproducible from this commit;
+      # git-ignored, uploaded as a non-blocking artifact. Supply-chain evidence (SSDF PS.3).
+      - name: Software bill of materials (SBOM)
+        run: npm run sbom
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-cyclonedx
+          path: sbom.cdx.json
+          if-no-files-found: warn
       - name: Build
         run: npm run build
