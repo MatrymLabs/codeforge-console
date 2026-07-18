@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "security": "npm audit --audit-level=high",
+    "sbom": "npx --yes @cyclonedx/cyclonedx-npm --output-file sbom.cdx.json",
     "prepare": "git config core.hooksPath scripts/hooks || true"
   },
   "dependencies": {
