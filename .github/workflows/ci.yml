@@ -25,5 +25,8 @@ jobs:
         run: npm run typecheck
       - name: Test
         run: npm test
+      # Dependency CVE gate (the npm-native peer of pip-audit): fail only on high/critical.
+      - name: Security (npm audit)
+        run: npm run security
       - name: Build
         run: npm run build

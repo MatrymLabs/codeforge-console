@@ -9,6 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "security": "npm audit --audit-level=high",
     "prepare": "git config core.hooksPath scripts/hooks || true"
   },
   "dependencies": {
