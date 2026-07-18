@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# CycloneDX SBOM (reproducible; produced in CI as an artifact)
+sbom.cdx.json
